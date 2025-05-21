@@ -1,6 +1,5 @@
 <?php
 require "koneksi.php";
-session_start();
 
 
 
@@ -64,7 +63,7 @@ $rows = $koneksi->execute_query($sql, []);
             </tbody>
         </table>
         <footer>
-            <h1 class="profil">Hi, <?=$_SESSION['nama']?>!</h1>
+            <h1 class="profil">Hi!</h1>
             <div class="tam-log">
                 <a href="tambah-Data.php">Tambah data</a>
                 <a href="logout.php">Log out</a>

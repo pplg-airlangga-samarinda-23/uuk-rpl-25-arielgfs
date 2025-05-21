@@ -1,6 +1,6 @@
 <?php
 require "koneksi.php";
-session_start();
+
 
 if (!isset($_SESSION['nama'])) {
     header("location:login-page.php");

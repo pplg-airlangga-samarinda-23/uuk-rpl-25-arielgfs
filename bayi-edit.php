@@ -1,10 +1,7 @@
 <?php 
 require "koneksi.php";
-session_start();
 
-if (!isset($_SESSION['nama'])) {
-    header("location:login-page.php");
-}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
@@ -63,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <button type="submit" style="max-width: 80px; font-size:larger; font-weight:600; color:grey; margin-top:10px; border:rgb(195, 195, 195) solid 1px; background-color:rgb(243, 243, 243); border-radius: 5px;">Submit</button>
         </form>
         <footer>
-            <h1 class="profil">Hi, <?=$_SESSION['nama']?>!</h1>
+            <h1 class="profil">Hi!</h1>
             <div class="tam-log">
                 <a href="data-bayi.php">Kembali</a>
             </div>

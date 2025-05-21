@@ -1,5 +1,5 @@
 <?php
-session_Start();
+
 require "koneksi.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
