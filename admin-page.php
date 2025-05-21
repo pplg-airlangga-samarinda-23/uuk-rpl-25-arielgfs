@@ -40,7 +40,7 @@ $rows = $koneksi->execute_query($sql, []);
                 <td><?= $kader["password"]; ?></td>
                 <td>
                     <a href="kader-edit.php?id=<?=$kader['id']?>">Edit</a>
-                    <a href="#">Hapus</a>
+                    <a href="kader-hapus.php?id=<?=$kader['id']?>">Hapus</a>
                 </td>
             </tr>
 
