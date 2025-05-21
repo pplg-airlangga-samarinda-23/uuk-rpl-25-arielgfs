@@ -1,0 +1,57 @@
+body {
+        background-color: #D4F6FF;
+        margin: 0;
+    }
+    header {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        padding: 20px 40px 20px 40px;
+        background-color: #FFDDAE;
+        border-radius: 10px;
+        margin-top: -20px;
+        color: white;
+        
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 60px 50px 60px;
+        background-color: #C6E7FF;
+        max-width: 340px;
+        border-radius: 10px;
+    }
+    .form-item {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        font-size: 25px;
+    }
+
+    #password {
+        font-size: 25px;
+        border: transparent;
+    }
+
+    #nama {
+        font-size: 25px;
+        border: transparent;
+    }
+
+    .isi {
+        margin-left: 550px;
+        margin-top: 50px;
+    }
+
+    .isi > h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600px;
+        color: #97BFDC;
+    }
+    .isi > form > .form-item > label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800px;
+        color: whitesmoke;
+        text-shadow: 2px black;
+        text-shadow: 1px 1px 1px grey;
+    }

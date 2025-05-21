@@ -1,0 +1,85 @@
+body {
+    background-color: #D4F6FF;
+    margin: 0;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    padding: 20px 40px 20px 40px;
+    background-color: #FFDDAE;
+    border-radius: 10px;
+    margin-top: -20px;
+    color: white;       
+}
+
+article {
+    padding: 50px;
+    background-color: white;
+    max-width: 1400px;
+    margin-left: 18px;
+    margin-top: 30px;
+    border-radius: 10px;
+    max-height: 900px;
+}
+article > h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.profil {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-align: left;
+    max-width: 200px;
+}
+
+article > footer > .tam-log > a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+article > footer > .tam-log {
+    text-align: right;
+    max-width: 300px;
+    position: relative;
+    top: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-kader {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.form-kader > input {
+    font-size: 20px;
+}
+
+.form-kader > label {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+form {
+    margin-left: 525px;
+    position: relative;
+    top: 5px;
+}

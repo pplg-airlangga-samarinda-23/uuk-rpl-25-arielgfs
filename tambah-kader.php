@@ -1,5 +1,10 @@
 <?php
 require "koneksi.php";
+session_start();
+
+if (!isset($_SESSION['nama'])) {
+    header("location:login-page.php");
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST["nama"];
@@ -19,22 +24,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posyandu pplg</title>
+    <title>Posyandu PPLG</title>
+    <link rel="stylesheet" href="tambah-kader.css">
 </head>
 <body>
-    <h1>TAMBAH DATA KADER</h1>
-    <form action="" method="post">
-        <div class="form-kader">
-            <label for="nama">Nama Kader</label>
-            <input type="text" name="nama" id="nama" required>
-        </div>
-        <div class="form-kader">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    <a href="barang.php">Kembali</a>
+    <header>
+        <h1 style="position:relative; top: 10px;">POSYANDU PPLG</h1>
+    </header>
+    <article>
+        <h1>TAMBAH DATA KADER</h1>
+        <form action="" method="post">
+            <div class="form-kader">
+                <label for="nama">Nama Kader</label>
+                <input type="text" name="nama" id="nama" required>
+            </div>
+            <div class="form-kader">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" style="max-width: 80px; font-size:larger; font-weight:600; color:grey; margin-top:10px; border:rgb(195, 195, 195) solid 1px; background-color:rgb(243, 243, 243); border-radius: 5px;">Submit</button>
+        </form>
+        <footer>
+            <h1 class="profil">Hi, <?=$_SESSION['nama']?>!</h1>
+            <div class="tam-log">
+                <a href="admin-page.php">Kembali</a>
+            </div>
+        </footer>
+    </article>
 </body>
 </html>
 
