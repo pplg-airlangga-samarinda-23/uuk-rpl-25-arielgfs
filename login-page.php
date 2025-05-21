@@ -1,5 +1,6 @@
 <?php 
 require 'koneksi.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['nama'];
@@ -10,12 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($username == "admin" && $password == md5("admin123")){
         header('location:admin-page.php');
-        session_start();
-        $_SESSION["nama"] = "Admin";
     } elseif (@$password == @$row['password']){
+        $_SESSION["nama"] = $username;
         header('location:data-bayi.php');
-        session_start();
-        $_SESSION["nama"] = $row["nama"];
     } else {
         echo "<script>alert('Password atau nama salah');</script>";
     }
