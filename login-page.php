@@ -1,5 +1,23 @@
 
+<?php 
+require 'koneksi.php';
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['nama'];
+    $password = md5($_POST['password']);
+
+    $sql = "SELECT password FROM kader WHERE nama = ?";
+    $row = $koneksi->execute_query($sql, [$username])->fetch_assoc();
+
+    if (@$password == @$row['password']){
+        header('location:data-bayi.php');
+    } elseif ($username == "admin" && $password == md5("admin123")){
+        header('location:admin-page.php');
+    } else {
+        echo "<script>alert('Password atau nama salah');</script>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,26 +49,3 @@
 </body>
 </html>
 
-<?php 
-require 'koneksi.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['nama'];
-    $password = md5($_POST['password']);
-
-    $sql = "SELECT password FROM kader WHERE nama = ?";
-    $row = $koneksi->execute_query($sql, [$username])->fetch_assoc();
-
-    if (@$password == @$row['password']){
-        header('location:data-bayi.php');
-        session_start();
-        $_SESSION["nama"] = $row["nama"];
-    } elseif ($username == "admin" && $password == md5("admin123")){
-        header('location:admin-page.php');
-        session_start();
-        $_SESSION["nama"] = "Admin";
-    } else {
-        echo "<script>alert('Password atau nama salah');</script>";
-    }
-}
-?>
