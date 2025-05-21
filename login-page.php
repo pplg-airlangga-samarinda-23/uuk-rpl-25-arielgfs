@@ -1,4 +1,3 @@
-
 <?php 
 require 'koneksi.php';
 
@@ -9,15 +8,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT password FROM kader WHERE nama = ?";
     $row = $koneksi->execute_query($sql, [$username])->fetch_assoc();
 
-    if (@$password == @$row['password']){
-        header('location:data-bayi.php');
-    } elseif ($username == "admin" && $password == md5("admin123")){
+    if ($username == "admin" && $password == md5("admin123")){
         header('location:admin-page.php');
+        session_start();
+        $_SESSION["nama"] = "Admin";
+    } elseif (@$password == @$row['password']){
+        header('location:data-bayi.php');
+        session_start();
+        $_SESSION["nama"] = $row["nama"];
     } else {
         echo "<script>alert('Password atau nama salah');</script>";
     }
-}
+}$username == "admin" && $password == md5("admin123")
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,4 +52,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body>
 </html>
-

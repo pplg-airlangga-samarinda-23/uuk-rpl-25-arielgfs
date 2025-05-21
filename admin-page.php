@@ -1,6 +1,10 @@
 <?php
 require "koneksi.php";
+session_start();
 
+if (!isset($_SESSION['nama'])) {
+    header("location:login-page.php");
+}
 
 $sql = "SELECT * FROM KADER";
 
@@ -54,7 +58,7 @@ $rows = $koneksi->execute_query($sql, []);
             </tbody>
         </table>
         <footer>
-            <h1 class="profil">Hi!</h1>
+            <h1 class="profil">Hi, <?=$_SESSION['nama']?>!</h1>
             <div class="tam-log">
                 <a href="tambah-kader.php">Tambah Kader</a>
                 <a href="logout.php">Log out</a>
